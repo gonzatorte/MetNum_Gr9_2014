@@ -1,4 +1,8 @@
 
+/*
+Leer de aqui https://eva.fing.edu.uy/mod/forum/discuss.php?d=56389
+*/
+
 //Notar que la original tiene color
 imshow('fing.bmp');
 
