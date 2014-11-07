@@ -11,5 +11,5 @@ A = imread('fing.bmp');
 imshow(A);
 
 //Al pasarlo a double es peor, se rompe toda la resolucion
-A = double(A)
+A = double(A);
 imshow(A);

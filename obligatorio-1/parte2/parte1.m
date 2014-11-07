@@ -71,18 +71,16 @@ function [dX] = F(t, X)
 end
 
 t0 = 1;
-n = 20;
+n = 40;
 tf = t0 + 10;
 X0 = [1,2,3]';
 
 [X_graf,Y_graf] = euler (t0, X0', tf, n, @F);
 
-X_graf
-Y_graf
-
 hold on;
-plot(X_graf,Y_graf, 'dr;euler;','markersize', 10, 'markeredgecolor', 'r', 'markerfacecolor', 'r', 'linewidth', 3);
-plot(X_graf,Y_graf, '-b;euler;');
+plot(X_graf,Y_graf(1,:), '-r;parasitos;');
+plot(X_graf,Y_graf(2,:), '-b;justos;');
+plot(X_graf,Y_graf(3,:), '-y;altruistas;');
 hold off;
 
 
