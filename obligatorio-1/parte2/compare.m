@@ -6,12 +6,13 @@ function compare(x0, f, F)
     [X, Ye] = euler(x0, f(x0), 20, 10, F);
     [X_, Yt] = trapecio(x0, f(x0), 20, 10, F);
     assert(X_, X);
-    Y = arrayfun(f, X);
+    X_w = [X(1): 0.1: X(length(X))];
+    Y_w = arrayfun(f, X_w);
 
     hold on;
     plot(X,Ye, 'dr;euler;','markersize', 10, 'markeredgecolor', 'r', 'markerfacecolor', 'r', 'linewidth', 3);
     plot(X,Yt, '+r;trapecio;','markersize', 15, 'markeredgecolor', 'b', 'markerfacecolor', 'b', 'linewidth', 5);
-    plot(X,Y, '-b;original;');
+    plot(X_w,Y_w, '-b;original;');
     hold off;
 end
 
@@ -23,7 +24,7 @@ end
 % La exponencial cumple que es igual a su derivada
 f = @exp;
 F = @(x, y) y;
-x0 = 1
+x0 = 1;
 compare(x0, f, F);
 
 pause()
@@ -35,9 +36,9 @@ pause()
 %(y^2)/2 = x
 %y = sqrt(2*x)
 %%%%%%%%% 
-f = @log
-F = @(x, y) 1/x;
-x0 = 1
+f = @(x, y) sqrt(2*x)
+F = @(x, y) 1/y;
+x0 = 1;
 compare(x0, f, F);
 
 pause()
@@ -49,7 +50,7 @@ pause()
 %%%%%%%%% 
 f = @log
 F = @(x, y) 1/x;
-x0 = 1
+x0 = 1;
 compare(x0, f, F);
 
 pause()
@@ -57,7 +58,7 @@ pause()
 % Voy a hace la prueba con la de y(x) = x
 f = @(x) x; %Identidad
 F = @(x, y) 1;
-x0 = 1
+x0 = 1;
 compare(x0, f, F);
 
 pause()
