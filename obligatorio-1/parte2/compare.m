@@ -17,7 +17,7 @@ function compare(x0, f, F)
 end
 
 function pause()
-    input('>','s')
+    input('>','s');
 end
 
 % Voy a hace la prueba con la de y(x) = e^x
@@ -27,7 +27,7 @@ F = @(x, y) y;
 x0 = 1;
 compare(x0, f, F);
 
-pause()
+pause();
 
 % Voy a hace la prueba con la de y(x) = sqrt(2*x)
 %%%%%%%%% 
@@ -36,24 +36,24 @@ pause()
 %(y^2)/2 = x
 %y = sqrt(2*x)
 %%%%%%%%% 
-f = @(x, y) sqrt(2*x)
+f = @(x, y) sqrt(2*x);
 F = @(x, y) 1/y;
 x0 = 1;
 compare(x0, f, F);
 
-pause()
+pause();
 
 % Voy a hace la prueba con la de y(x) = ln(x)
 %%%%%%%%% 
 %dy/dx = 1/x
 %y = log(x)
 %%%%%%%%% 
-f = @log
+f = @log;
 F = @(x, y) 1/x;
 x0 = 1;
 compare(x0, f, F);
 
-pause()
+pause();
 
 % Voy a hace la prueba con la de y(x) = x
 f = @(x) x; %Identidad
@@ -61,4 +61,4 @@ F = @(x, y) 1;
 x0 = 1;
 compare(x0, f, F);
 
-pause()
+pause();
